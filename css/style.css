@@ -13,6 +13,11 @@ body{
     width:100%;
     margin:0 auto;
 }
+#results1{
+    border:1px #888888 solid;
+    width:100%;
+    margin:0 auto;
+}
 td, th {
     border: 1px solid #dddddd;
     text-align: left;
@@ -32,6 +37,16 @@ tr:nth-child(even) {
     border-radius: 4px;
 }
 #button:hover{
+    background-color: #ffffff;
+    color: #2980b9;
+}
+#button1{
+    background-color: #2980b9;
+    color: #ffffff;
+    width:10%;
+    border-radius: 4px;
+}
+#button1:hover{
     background-color: #ffffff;
     color: #2980b9;
 }
