@@ -34,7 +34,7 @@ $("#button").click(function(){
 
 $("#button1").click(function(){
   let input = $("#input1").val();
-  $.get(`https://jsonplaceholder.typicode.com/todos/${input}`, function(data, status){
+  $.get(`https://azt109-backend.azurewebsites.net/service/${input}`, function(data, status){
     if(status == "success"){
        console.log(data)
         addRow1(data)
