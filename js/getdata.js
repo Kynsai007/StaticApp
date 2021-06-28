@@ -9,6 +9,17 @@ function addRow(data)
     $("#results").append(tblRow);    
 }    
 
+function addRows(data)    
+{    
+    let headers = Object.keys(data)
+    let tblRow = '<tr>';
+    for(let h of headers){
+      tblRow = tblRow + '<td>' + data[h] + '</td>';
+    }
+    tblRow = tblRow + '</tr>';
+    $("#results2").append(tblRow);    
+}  
+
 
 function addRow1(data)    
 {    
@@ -38,6 +49,24 @@ $("#button1").click(function(){
     if(status == "success"){
        console.log(data)
         addRow1(data)
+    }
+  });
+});
+
+$("#button2").click(function(){
+  $.get(`https://azt109-backend.azurewebsites.net/testconnection`, function(data, status){
+    if(status == "success"){
+       $("#res").html(data.message)
+    }
+  });
+});
+
+$("#button3").click(function(){
+  $.get(`https://azt109-backend.azurewebsites.net/getservicesfromdb`, function(data, status){
+    if(status == "success"){
+      for(let i=0;i<data.data;i++){
+        addRows(data.data[i]);
+      }    
     }
   });
 });
